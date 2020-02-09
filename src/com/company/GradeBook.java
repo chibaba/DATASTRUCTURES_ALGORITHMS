@@ -28,4 +28,43 @@ public class GradeBook {
 
         outputBarchat();
     }
+    // find minimum grade
+    public int getMinimum() {
+        int lowGrade = grades[0]; // we assume grade [0] is the smallest
+
+        // loop through grades array
+        for (int grade : grades)
+        {
+            // if grade is lower than lowerGrade, assign it to lowGrade
+            if (grade < lowGrade)
+                lowGrade = grade; // new lowest Grade
+        }
+        return lowGrade;
+
+    }
+    // find maximum grade
+    public int getMaximum() {
+        int highGrade = grades[0];
+        //loop through grade array
+        for (int grade : grades)
+        {
+            // if grade is higher than grade, we set the grade to higher grade
+            if (grade > highGrade)
+                highGrade = grade;
+        }
+        return highGrade;
+    }
+
+    // determine average Grade for test
+    public double getAverage() {
+        int total = 0;
+
+        //sum grade for one student
+        for (int grade : grades)
+            total += grade;
+
+        // return average of grades
+        return (double) total/grades.length;
+
+    }
 }
